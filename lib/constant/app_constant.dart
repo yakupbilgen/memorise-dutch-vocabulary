@@ -6,13 +6,4 @@ class AppConstant {
 
   static const defaultPadding = 20.0;
   static const defaultHeight = 20.0;
-
-  // AppBar appAppBar(BuildContext context) {
-  //   return AppBar(
-  //     title: Text(
-  //       appBarTitle,
-  //       style: Theme.of(context).textTheme.headline3,
-  //     ),
-  //   );
-  // }
 }
