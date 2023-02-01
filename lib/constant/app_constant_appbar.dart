@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'app_color.dart';
-import 'app_size.dart';
+import 'app_constant_color.dart';
+import 'app_contant_size.dart';
 
 AppBar appAppBar(
   BuildContext context,
@@ -37,7 +37,7 @@ AppBar appAppBar(
         //TODO: function
         onPressed: () => Navigator.pop(context),
         icon: const Icon(
-          Icons.warning_amber,
+          Icons.info,
           color: AppConstantColor.iconColor,
           size: AppConstantSize.iconSize,
         ),
