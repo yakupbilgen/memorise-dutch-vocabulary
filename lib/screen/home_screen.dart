@@ -17,7 +17,7 @@ class _HomeScrenState extends State<HomeScren> {
   Widget build(BuildContext context) {
     final Size deviceSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: appAppBar(context, AppConstantText.appBarTitle, false),
+      appBar: appAppBar(context, AppConstantText.appBarTitle, false, true),
       backgroundColor: AppConstantColor.bgColor,
       body: Container(
         padding: const EdgeInsets.only(
@@ -34,11 +34,11 @@ class _HomeScrenState extends State<HomeScren> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {StepState.complete},
+        backgroundColor: Colors.orange,
         child: const Icon(
           Icons.add,
           color: Colors.black,
         ),
-        backgroundColor: Colors.orange,
       ),
     );
   }
