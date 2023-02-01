@@ -7,6 +7,7 @@ AppBar appAppBar(
   BuildContext context,
   String title,
   bool showBackButton,
+  bool showActionButton,
 ) {
   return AppBar(
     backgroundColor: AppConstantColor.bgColor,
@@ -33,15 +34,18 @@ AppBar appAppBar(
     ),
     centerTitle: true,
     actions: <Widget>[
-      IconButton(
-        //TODO: function
-        onPressed: () => Navigator.pop(context),
-        icon: const Icon(
-          Icons.info,
-          color: AppConstantColor.iconColor,
-          size: AppConstantSize.iconSize,
+      if (showActionButton)
+        Visibility(
+          child: IconButton(
+            //TODO: function
+            onPressed: () => Navigator.pop(context),
+            icon: const Icon(
+              Icons.info,
+              color: AppConstantColor.iconColor,
+              size: AppConstantSize.iconSize,
+            ),
+          ),
         ),
-      ),
     ],
   );
 }
