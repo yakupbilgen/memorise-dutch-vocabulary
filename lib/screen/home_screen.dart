@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:memorisedutchvocabulary/constant/app_constant_color.dart';
-import 'package:memorisedutchvocabulary/constant/app_constant_text.dart';
+import 'package:flutter/services.dart';
 
 import '../constant/app_constant_appbar.dart';
+import '../constant/app_constant_color.dart';
+import '../constant/app_constant_text.dart';
 import '../constant/app_contant_size.dart';
 
 class HomeScren extends StatefulWidget {
@@ -13,9 +16,39 @@ class HomeScren extends StatefulWidget {
 }
 
 class _HomeScrenState extends State<HomeScren> {
+  late var catalogData;
+
+  Future<String> loadData() async {
+    var data = await rootBundle.loadString("assets/json/vocabulary.json");
+    setState(() {
+      catalogData = json.decode(data);
+    });
+    return "success";
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
   @override
   Widget build(BuildContext context) {
     final Size deviceSize = MediaQuery.of(context).size;
+
+    var futureBuilder = FutureBuilder(
+        future: loadData(),
+        builder: (context, AsyncSnapshot snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.connectionState == ConnectionState.done) {
+            return Center(
+                child: Text(catalogData.toString(), style: const TextStyle()));
+          } else {
+            return Container();
+          }
+        });
+
     return Scaffold(
       appBar: appAppBar(context, AppConstantText.appBarTitle, false, true),
       backgroundColor: AppConstantColor.bgColor,
@@ -32,8 +65,13 @@ class _HomeScrenState extends State<HomeScren> {
                   ?.copyWith(color: Colors.orange)),
         ),
       ),
+      // body: Center(
+      //   child: Text(catalogData.toString()),
+      // ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {StepState.complete},
+        onPressed: () {
+          debugPrint(catalogData.toString());
+        },
         backgroundColor: Colors.orange,
         child: const Icon(
           Icons.add,

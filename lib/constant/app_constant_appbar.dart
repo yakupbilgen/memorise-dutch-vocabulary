@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../screen/information_screen.dart';
 import 'app_constant_color.dart';
 import 'app_contant_size.dart';
 
@@ -38,7 +39,11 @@ AppBar appAppBar(
         Visibility(
           child: IconButton(
             //TODO: function
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (BuildContext context) => const InformationScreen()),
+            ),
             icon: const Icon(
               Icons.info,
               color: AppConstantColor.iconColor,
