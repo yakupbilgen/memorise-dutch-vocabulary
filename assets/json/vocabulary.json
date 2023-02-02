@@ -1,33 +1,38 @@
 {
     "vocabulary": [
         {
-            "dutch": "1 ik",
-            "english": "I",
-            "turkish": "ben",
+            "id": 1,
+            "dutch": "een",
+            "english": "one",
+            "turkish": "bir",
             "example": "ik kom uit Turkije"
         },
         {
-            "dutch": "2 ik",
-            "english": "I",
-            "turkish": "ben",
+            "id": 2,
+            "dutch": "drie",
+            "english": "two",
+            "turkish": "iki",
             "example": "ik kom uit Turkije"
         },
         {
-            "dutch": "3 ik",
-            "english": "I",
-            "turkish": "ben",
+            "id": 3,
+            "dutch": "twee",
+            "english": "three",
+            "turkish": "üç",
             "example": "ik kom uit Turkije"
         },
         {
-            "dutch": "4 ik",
-            "english": "I",
-            "turkish": "ben",
+            "id": 4,
+            "dutch": "fier",
+            "english": "four",
+            "turkish": "dört",
             "example": "ik kom uit Turkije"
         },
         {
-            "dutch": "5 ik",
-            "english": "I",
-            "turkish": "ben",
+            "id": 5,
+            "dutch": "fife",
+            "english": "five",
+            "turkish": "beş",
             "example": "ik kom uit Turkije"
         }
     ]
