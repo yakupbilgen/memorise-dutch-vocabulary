@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:memorisedutchvocabulary/constant/app_constant_appbar.dart';
-import 'package:memorisedutchvocabulary/constant/app_constant_color.dart';
+
+import '../constant/app_constant_appbar.dart';
+import '../constant/app_constant_color.dart';
 
 class InformationScreen extends StatefulWidget {
   const InformationScreen({super.key});
